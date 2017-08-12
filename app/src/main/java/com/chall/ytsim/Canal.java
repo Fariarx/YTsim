@@ -2,6 +2,7 @@ package com.chall.ytsim;
 
 import android.graphics.Bitmap;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,6 +12,25 @@ import java.util.List;
 public class Canal {
     String nameCanal;
     Bitmap iconCanal;
+    int ratingCanal;
     List<Video> ListVideo;
+    //
+    Auditory auditory;
+    YouTubeAd youTubeAd;
+    TechsAndSoft techsAndSoft;
+    YouTuber youTuber;
+    //
+    double CommonConstForTechAndSoft;
 
+    public Canal(String nameCanal)
+    {
+        this.nameCanal = nameCanal;
+
+        ListVideo = new ArrayList<>();
+    }
+
+    void Tick()
+    {
+
+    }
 }
