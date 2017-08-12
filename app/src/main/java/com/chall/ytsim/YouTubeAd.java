@@ -6,23 +6,14 @@ package com.chall.ytsim;
 
 public class YouTubeAd {
     private final double StartSeparateWatchIncome = 0.002; //dollars
-    private final double CanalCountCoeff = 1000; //test
+   // private final double CanalCountCoeff = 1000; //test
+   // private double SeparateWatchIncome;
 
-    public double getSeparateWatchIncome() {
-        return SeparateWatchIncome;
-    }
-
-    public void setSeparateWatchIncome(double separateWatchIncome) {
-        SeparateWatchIncome = separateWatchIncome;
-    }
-
-    private double SeparateWatchIncome;
-
-    public YouTubeAd(int canalWatchCount) {
+    public YouTubeAd() {
         //computeIncome(canalWatchCount); тут ещё надо подумать
     }
 
-    public void computeIncome(int canalWatchCount) {
-        SeparateWatchIncome = StartSeparateWatchIncome+canalWatchCount/CanalCountCoeff;
-    }
+//    public void computeIncome(int canalWatchCount) {
+//        SeparateWatchIncome = StartSeparateWatchIncome + canalWatchCount/CanalCountCoeff;
+//    }
 }
