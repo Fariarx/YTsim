@@ -19,7 +19,7 @@ public class Canal {
     YouTubeAd youTubeAd;
     public TechsAndSoft techsAndSoft;
     YouTuber youTuber;
-    Utilites utilites;
+    ItemsSourceTech utilites;
     //
     double CommonConstForTechAndSoft;
 
@@ -33,7 +33,7 @@ public class Canal {
         youTubeAd = new YouTubeAd();
         youTuber = new YouTuber(100,10);
         //
-        utilites = new Utilites();
+        utilites = new ItemsSourceTech();
     }
 
     void Tick()
