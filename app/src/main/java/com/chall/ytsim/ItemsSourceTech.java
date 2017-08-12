@@ -9,11 +9,11 @@ import java.util.List;
 
 public class ItemsSourceTech {
 
-    List<BaseTech> comps;
-    List<BaseTech> microphones;
-    List<BaseTech> softMusic;
-    List<BaseTech> cameras;
-    List<BaseTech> softVideo;
+   private List<BaseTech> comps;
+    private List<BaseTech> microphones;
+    private List<BaseTech> softMusic;
+    private List<BaseTech> cameras;
+    private List<BaseTech> softVideo;
 
     public ItemsSourceTech()
     {
