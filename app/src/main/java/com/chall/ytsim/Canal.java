@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Canal {
     String nameCanal;
-    Bitmap iconCanal;
+    Bitmap iconCanal = null;
     int ratingCanal;
     List<Video> ListVideo;
     //
@@ -19,6 +19,7 @@ public class Canal {
     YouTubeAd youTubeAd;
     public TechsAndSoft techsAndSoft;
     YouTuber youTuber;
+    Utilites utilites;
     //
     double CommonConstForTechAndSoft;
 
@@ -31,6 +32,8 @@ public class Canal {
         techsAndSoft = new TechsAndSoft();
         youTubeAd = new YouTubeAd();
         youTuber = new YouTuber(100,10);
+        //
+        utilites = new Utilites();
     }
 
     void Tick()
