@@ -8,17 +8,22 @@ import java.util.List;
  */
 
 public class Utilites {
-    List<String[]> Comps;
+
+    List<BaseTech> comps;
+
     public Utilites()
     {
-        Comps = new ArrayList<String[]>(); setComps();
+        setComps();
     }
+
     void setComps()
     {
-        Comps.add(new String[]{"NextFuture","60","1"});
+        comps = new ArrayList<BaseTech>();
+        comps.add(new BaseTech("NextFuture",70,1));
     }
-    String[] getComps(int index)
+
+    BaseTech getComps(int index)
     {
-        return Comps.get(index);
+        return comps.get(index);
     }
 }
