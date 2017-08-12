@@ -17,7 +17,7 @@ public class Canal {
     //
     Auditory auditory;
     YouTubeAd youTubeAd;
-    TechsAndSoft techsAndSoft;
+    public TechsAndSoft techsAndSoft;
     YouTuber youTuber;
     //
     double CommonConstForTechAndSoft;
@@ -25,8 +25,12 @@ public class Canal {
     public Canal(String nameCanal)
     {
         this.nameCanal = nameCanal;
-
+        this.ratingCanal = 0;
         ListVideo = new ArrayList<>();
+        auditory = new Auditory();
+        techsAndSoft = new TechsAndSoft();
+        youTubeAd = new YouTubeAd();
+        youTuber = new YouTuber(100,10);
     }
 
     void Tick()
