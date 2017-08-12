@@ -11,7 +11,6 @@ import java.util.List;
 public class Canal {
     String nameCanal;
     Bitmap iconCanal;
-    int ratingCanal;
     List<Video> ListVideo;
 
 }
