@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">YT sim</string>
+    <string name="day">День:</string>
+    <string name="time">Время:</string>
+    <string name="podpis">Подписчиков</string>
+    <string name="vid">Видео</string>
+    <string name="prosm">Просмотров</string>
+    <string name="menu">Меню</string>
+    <string name="stat">Статистика</string>
+    <string name="stud">Студия записи</string>
+    <string name="mag">Магазин</string>
+    <string name="pir">Пиар, реклама</string>
+    <string name="nav">Навыки</string>
+    <string name="rab">Работа</string>
+    <string name="likes">Лайков:</string>
+    <string name="dis">Дизлайков:</string>
+</resources>
