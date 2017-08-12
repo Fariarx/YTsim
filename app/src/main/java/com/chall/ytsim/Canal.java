@@ -19,21 +19,21 @@ public class Canal {
     YouTubeAd youTubeAd;
     public TechsAndSoft techsAndSoft;
     YouTuber youTuber;
-    ItemsSourceTech utilites;
+    ItemsSourceTech techItems;
     //
     double CommonConstForTechAndSoft;
 
     public Canal(String nameCanal)
     {
+        techItems = new ItemsSourceTech();
+        //
         this.nameCanal = nameCanal;
         this.ratingCanal = 0;
         ListVideo = new ArrayList<>();
         auditory = new Auditory();
-        techsAndSoft = new TechsAndSoft();
+        techsAndSoft = new TechsAndSoft(techItems.getCameras(0),techItems.getComps(0),techItems.getMicrophones(0),techItems.getSoftMusic(0),techItems.getSoftVideo(0));
         youTubeAd = new YouTubeAd();
         youTuber = new YouTuber(100,10);
-        //
-        utilites = new ItemsSourceTech();
     }
 
     void Tick()
