@@ -12,6 +12,7 @@ public class TechsAndSoft {
    private BaseTech microphone;
    private BaseTech softMusic;
    private BaseTech softVideo;
+    private double cofForAllTech;
 
     public TechsAndSoft(BaseTech camera, BaseTech computer, BaseTech microphone, BaseTech softMusic, BaseTech softVideo) {
         this.camera = camera;
@@ -20,8 +21,10 @@ public class TechsAndSoft {
         this.softMusic = softMusic;
         this.softVideo = softVideo;
     }
-
-
+    public double getCofForAllTech()
+    {
+        //здесь считаем кофф для всей техники и возвращаем - нужно для записи видео
+    }
     public BaseTech getCamera() {
         return camera;
     }
