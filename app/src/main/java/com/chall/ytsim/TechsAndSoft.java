@@ -24,6 +24,7 @@ public class TechsAndSoft {
     public double getCofForAllTech()
     {
         //здесь считаем кофф для всей техники и возвращаем - нужно для записи видео
+        return 0;
     }
     public BaseTech getCamera() {
         return camera;
