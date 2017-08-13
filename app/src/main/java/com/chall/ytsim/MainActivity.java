@@ -11,7 +11,7 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
 
     Canal canal;
-    int hour = 9;
+    int minutes = 540;
     int day = 1;
 
     //Chronometer
@@ -58,17 +58,19 @@ public class MainActivity extends AppCompatActivity {
     }
     void TickChronometr()
     {
-        hour++;
-        if(hour == 24) {
+        minutes++;
+        if(minutes == 1440) {
             day++;
-            hour = 0;
+            minutes = 0;
         }
-        if(hour<10)
+        if(minutes<10)
         timeHours.setText(getString(R.string.time)+ "0" + hour);
         else
             timeHours.setText(getString(R.string.time) + hour);
         timeDay.setText(getString(R.string.day) + day);
     }
     void setdate() {
+        canal.Tick(minutes,day);
+
     }
 }

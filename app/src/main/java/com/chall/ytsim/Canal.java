@@ -13,8 +13,8 @@ public class Canal {
     String nameCanal;
     Bitmap iconCanal = null;
     int ratingCanal;
-    List<Video> ListVideo;
     //
+    List<Video> ListVideo;
     Auditory auditory;
     YouTubeAd youTubeAd;
     public TechsAndSoft techsAndSoft;
@@ -35,9 +35,9 @@ public class Canal {
         youTubeAd = new YouTubeAd();
         youTuber = new YouTuber(100,10);
     }
-
-    void Tick()
+    void Tick(int minutes,int days)
     {
 
     }
+    void CaptureVideo()
 }
