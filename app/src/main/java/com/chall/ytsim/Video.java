@@ -5,24 +5,29 @@ package com.chall.ytsim;
  */
 
 public class Video {
+
+    private double ConstMarkCoeff = 0.08;// Будет постоянно умножаться на число просмотров за тик, общее число оценивших
+    //Likes =
     final String name;
     private int watchCount;
-    private int likes;
-    private int dislikes;
-    private int videoQuality;//Меняется в методе с расчётом этого параметра
+    private double likes;
+    private double dislikes;
+    private int DateUploadMinutes;
+    private double videoQuality;//Меняется в методе с расчётом этого параметра
 
 
-    public Video(String name) {
+    public Video(String name, double videoQuality, int Days, int Minutes) {
         this.name = name;
         likes = 0;
         dislikes = 0;
         watchCount = 0;
-        CaptureVideo();
+        this.videoQuality = videoQuality;
+        DateUploadMinutes = Minutes + Days*1440;
     }
 
-    private void CaptureVideo() {
-        //TODO: add formula and arguments
-        //videoQuality = SomeFormuka
+    public void ComputeLikesDislikes(double AuditLoyality, int WatchesForTick) {
+        likes += WatchesForTick*ConstMarkCoeff*AuditLoyality/100;
+        dislikes += WatchesForTick*ConstMarkCoeff*(100 - AuditLoyality)/100;
     }
 
     public int getWatchCount() {
@@ -33,7 +38,7 @@ public class Video {
         this.watchCount = watchCount;
     }
 
-    public int getLikes() {
+    public double getLikes() {
         return likes;
     }
 
@@ -41,7 +46,7 @@ public class Video {
         this.likes = likes;
     }
 
-    public int getDislikes() {
+    public double getDislikes() {
         return dislikes;
     }
 
@@ -49,7 +54,7 @@ public class Video {
         this.dislikes = dislikes;
     }
 
-    public int getVideoQuality() {
+    public double getVideoQuality() {
         return videoQuality;
     }
 }

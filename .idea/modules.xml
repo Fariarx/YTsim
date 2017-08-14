@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/YTsim.iml" filepath="$PROJECT_DIR$/YTsim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/YTsimNew.iml" filepath="$PROJECT_DIR$/YTsimNew.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/progrbar/progrbar.iml" filepath="$PROJECT_DIR$/progrbar/progrbar.iml" />
     </modules>

@@ -6,7 +6,7 @@ package com.chall.ytsim;
 
 public class Auditory {
     private int numerosity;
-    private double loyality;
+    private double loyality; //ОТ 0 ДО 10!
     private double increaseDecrease;
 
 

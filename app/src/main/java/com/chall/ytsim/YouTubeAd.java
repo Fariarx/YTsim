@@ -7,7 +7,7 @@ package com.chall.ytsim;
 public class YouTubeAd {
     private double StartSeparateWatchIncome = 0.002; //dollars
    // private final double CanalCountCoeff = 1000; //test
-   // private double SeparateWatchIncome;
+   private double SeparateWatchIncome;
 
     public YouTubeAd() {
         //computeIncome(canalWatchCount); тут ещё надо подумать

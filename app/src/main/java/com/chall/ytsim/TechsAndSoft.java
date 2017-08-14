@@ -21,10 +21,12 @@ public class TechsAndSoft {
         this.softMusic = softMusic;
         this.softVideo = softVideo;
     }
+
+
     public double getCofForAllTech()
     {
-        //здесь считаем кофф для всей техники и возвращаем - нужно для записи видео
-        return 0;
+        return camera.getCofForTech()+computer.getCofForTech()+microphone.getCofForTech()
+                +softMusic.getCofForTech()+softVideo.getCofForTech();
     }
     public BaseTech getCamera() {
         return camera;

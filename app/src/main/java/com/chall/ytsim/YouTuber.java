@@ -7,6 +7,7 @@ package com.chall.ytsim;
 public class YouTuber {
     int money;
     Work work;
+
     public YouTuber(int money,int IncomeFor7days)
     {
         this.money = money;
@@ -15,5 +16,13 @@ public class YouTuber {
     void sevenDaysPastSet()
     {
         work.ChangeWealth();
+    }
+
+    public Work getWork() {
+        return work;
+    }
+
+    public void setWork(Work work) {
+        this.work = work;
     }
 }
