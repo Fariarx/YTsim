@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#96a6fb</color>
+    <color name="colorPrimary">#485186</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="mainFon">#f1f1f1</color>
@@ -11,5 +11,6 @@
     <color name="btnmain">#b5f2be</color>
     <color name="btn2">#a9dcb0</color>
     <color name="btnAll">#e6ffa7</color>
-    <color name="gold">#e8ba3a</color>
+    <color name="gold">#d5ffe100</color>
+    <color name="ActionBarTextColor">#d8ffffff</color>
 </resources>

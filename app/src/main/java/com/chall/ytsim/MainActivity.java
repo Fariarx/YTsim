@@ -1,26 +1,24 @@
 package com.chall.ytsim;
 
-import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Chronometer;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
     Canal canal;
+    int timeTickInMilisec = 50;
+    int minetsForTick = 5;
     int minutes = 540;
     int day = 1;
 
-    //Chronometer
-    Chronometer e;
-    int seconds = 0;
-    long elapsedMillis = 0;
-    int secondChange = 0;
     //
-    TextView timeHours;
+    Timer mTimer = new Timer();
+    TimerTaskTick mMyTimerTask;
+    TextView timeSet;
     TextView timeDay;
     //
     @Override
@@ -32,45 +30,55 @@ public class MainActivity extends AppCompatActivity {
         canal = new Canal("New Canal");
         startTimer();
     }
-    void setResours() {
-        e = (Chronometer) findViewById(R.id.chronometer2);
-        timeHours = (TextView) findViewById(R.id.textView4);
-        timeDay = (TextView) findViewById(R.id.textView5);
+    ///////////////////////
+    private void setResours() {
+        timeSet = (TextView) findViewById(R.id.textView4);
+        timeDay = (TextView) findViewById(R.id.textView3);
+        timeDay.setText(getString(R.string.day) + day);
     }
-    void startTimer() {
-        //Chr tick
-        e.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
-            @Override
-            public void onChronometerTick(Chronometer chronometer) {
-                elapsedMillis = SystemClock.elapsedRealtime()
-                        - e.getBase();
-                ///
-                seconds = (int) (elapsedMillis / 1000);
-                if(secondChange != seconds) {
-                    TickChronometr();
-                    secondChange = seconds;
+    private class TimerTaskTick extends TimerTask {
+        @Override
+        public void run() {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Tick();
+                    startTimer();
                 }
-                setdate();
-            }
-        });
-        e.setBase(SystemClock.elapsedRealtime());
-        e.start();
+            });
+
+        }
     }
-    void TickChronometr()
-    {
-        minutes++;
+    private void startTimer() {
+        mMyTimerTask = new TimerTaskTick();
+        mTimer.schedule(mMyTimerTask, timeTickInMilisec);
+    }
+    private int hours = 0;
+    private int minutesInNowHour = 0;
+    private void setdate() {
+        minutes+=minetsForTick;
         if(minutes == 1440) {
             day++;
             minutes = 0;
+            timeDay.setText(getString(R.string.day) + day);
         }
-        if(minutes<10)
-        timeHours.setText(getString(R.string.time)+ "0" + hour);
+        hours = (int) minutes/60;
+        if(hours<10) {
+            timeSet.setText(getString(R.string.time) + "0" + hours + ":");
+        }
         else
-            timeHours.setText(getString(R.string.time) + hour);
-        timeDay.setText(getString(R.string.day) + day);
+            timeSet.setText(getString(R.string.time) + hours + ":");
+        minutesInNowHour = minutes-(hours*60);
+        if(minutesInNowHour<10) {
+            timeSet.setText(timeSet.getText() + "0" + minutesInNowHour);
+        }
+        else
+            timeSet.setText(timeSet.getText() + String.valueOf( minutesInNowHour));
     }
-    void setdate() {
+    ///////////////////////
+    void Tick()
+    {
+        setdate();
         canal.Tick(minutes,day);
-
     }
 }
