@@ -35,9 +35,27 @@ public class Canal {
         youTubeAd = new YouTubeAd();
         youTuber = new YouTuber(100,10);
     }
-    void Tick(int minutes,int days)
-    {
+    void Tick(int days, int minutes)
+    {   int ChangeSeparatewatchCount;
+        if(days%7==0)
+        {
+            youTuber.sevenDaysPastSet();
+        }
+        //YouTubeAdIncome - в последнюю очередь после отработки просмотров
+        for(Video vid: ListVideo) {
+            //ChangeSeparatewatchCount = vid.getTestWatchCoeff();
+            ComputeWatchesForConcreteVideoChangeAffecttedByAudtoryNumerosityAndDateOfUpload(days, minutes, auditory.getNumerosity());
+            vid.setWatchCount(vid.getWatchCount() + ChangeSeparatewatchCount);
+            vid.ComputeLikesDislikes(auditory.getLoyality(), ChangeSeparatewatchCount);
+        }
 
     }
-    void CaptureVideo()
+
+    void CreateVideo(String name, int days, int minutes) {
+        Video newvid = new Video(name, techsAndSoft.getCofForAllTech(), days, minutes);
+    }
+
+    void ComputeWatchesForConcreteVideoChangeAffecttedByAudtoryNumerosityAndDateOfUpload(int days, int minutes, int numerosity, double loyality){
+
+    }
 }
