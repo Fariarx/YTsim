@@ -13,4 +13,5 @@
     <color name="btnAll">#e6ffa7</color>
     <color name="gold">#d5ffe100</color>
     <color name="ActionBarTextColor">#d8ffffff</color>
+    <color name="colorForLD">#9c9c9c</color>
 </resources>

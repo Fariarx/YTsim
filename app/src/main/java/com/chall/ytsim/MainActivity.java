@@ -1,25 +1,29 @@
 package com.chall.ytsim;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
     Canal canal;
-    int timeTickInMilisec = 50;
-    int minetsForTick = 5;
     int minutes = 540;
     int day = 1;
 
-    //
+    //Timer
     Timer mTimer = new Timer();
     TimerTaskTick mMyTimerTask;
     TextView timeSet;
     TextView timeDay;
+    int timeTickInMilisec = 50;
+    int minetsForTick = 5;
     //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,9 +80,8 @@ public class MainActivity extends AppCompatActivity {
             timeSet.setText(timeSet.getText() + String.valueOf( minutesInNowHour));
     }
     ///////////////////////
-    void Tick()
-    {
+    void Tick() {
         setdate();
-        canal.Tick(minutes,day);
+        canal.Tick(day,minutes);
     }
 }
