@@ -22,6 +22,7 @@ public class Canal {
     ItemsSourceTech techItems;
     //
     double CommonConstForTechAndSoft;
+    int VideoUploadFrequencyCounter;
 
     public Canal(String nameCanal)
     {
@@ -34,9 +35,12 @@ public class Canal {
         techsAndSoft = new TechsAndSoft(techItems.getCameras(0),techItems.getComps(0),techItems.getMicrophones(0),techItems.getSoftMusic(0),techItems.getSoftVideo(0));
         youTubeAd = new YouTubeAd();
         youTuber = new YouTuber(100,10);
+        VideoUploadFrequencyCounter = 0;
     }
     void Tick(int days, int minutes)
-    {   int ChangeSeparatewatchCount;
+    {
+        VideoUploadFrequencyCounter+=1;
+        int ChangeSeparatewatchCount;
         if(days%7==0)
         {
             youTuber.sevenDaysPastSet();
@@ -52,7 +56,10 @@ public class Canal {
     }
 
     void CreateVideo(String name, int days, int minutes) {
+        VideoUploadFrequencyCounter = 0;
         Video newvid = new Video(name, techsAndSoft.getCofForAllTech(), days, minutes);
+        ListVideo.add(newvid);
+
     }
 
     void ComputeWatchesForConcreteVideoChangeAffecttedByAudtoryNumerosityAndDateOfUpload(int days, int minutes, int numerosity, double loyality){

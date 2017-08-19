@@ -20,9 +20,13 @@ public class Auditory {
 
     }
 
-    void computeAuditoryChange(int dRating) {
+    void computeIncreaseDecrease(Video video) {
 
     }
+
+    void computeIncreaseDecreaseForTick
+
+    //Дальше - автосозданные свойства, ничего особо важного
     public int getNumerosity() {
         return numerosity;
     }
@@ -32,11 +36,17 @@ public class Auditory {
     }
 
     public double getLoyality() {
+
         return loyality;
     }
 
     public void setLoyality(double loyality) {
-        this.loyality = loyality;
+        //делаем так, чтобы лояльность не переваливала за сотку и чтобы не была меньше 0
+        if(loyality>=100)
+            this.loyality = 100;
+        else if(loyality<=0)
+            this.loyality = 0;
+        else this.loyality = loyality;
     }
 
     public double getIncreaseDecrease() {
